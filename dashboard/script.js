@@ -18,7 +18,7 @@ let xiosk = {
     if (duration) {
       $(tmpUrl).find('.duration-input').val(duration);
     }
-    if (cycles) {
+    if (cycles != null) {
       $(tmpUrl).find('.cycles-input').val(cycles);
     }
 
@@ -117,7 +117,7 @@ $(document).ready(() => {
       // Now collecting all data: url, duration, and cycles
       const url = $(item).find('a').attr('href');
       const duration = parseInt($(item).find('.duration-input').val()) || 10;
-      const cycles = parseInt($(item).find('.cycles-input').val()) || 10;
+      const cycles = parseInt($(item).find('.cycles-input').val()) ?? 10;
 
       config.urls.push({
         url: url,
